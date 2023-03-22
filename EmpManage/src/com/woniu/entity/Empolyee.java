@@ -3,9 +3,9 @@ package com.woniu.entity;
 /*
  * @Author: 宋世杰
  * @Date: 2023-03-22 11:15:48
- * @LastEditTime: 2023-03-22 12:02:08
+ * @LastEditTime: 2023-03-22 13:07:46
  * @LastEditors: 宋世杰
- * @FilePath: \JavaProject\EmpManage\src\entity\Empolyee.java
+ * @FilePath: \EmpManage\src\com\woniu\entity\Empolyee.java
  * @Description: 请自行修改描述
  */
 
@@ -41,8 +41,24 @@ public class Empolyee {
         eaddress = add;
     }
 
-    String get() {
-        return eid + " " + ename + " " + eage + " " + esex + " " + eaddress;
+    int getId() {
+        return eid;
+    }
+
+    int getAge() {
+        return eage;
+    }
+
+    String getName(){
+        return ename;
+    }
+
+    String getSex(){
+        return esex;
+    }
+
+    String getAdd(){
+        return eaddress;
     }
 
     @Override
