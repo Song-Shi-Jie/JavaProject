@@ -1,54 +1,31 @@
-package com.woniu.entity;
+package student;
 
-import java.util.Scanner;
-
-/*
- * @Author: 宋世杰
- * @Date: 2023-03-22 11:15:48
- * @LastEditTime: 2023-03-22 15:22:54
- * @LastEditors: 宋世杰
- * @FilePath: \EmpManage\src\com\woniu\entity\Empolyee.java
- * @Description: 请自行修改描述
- */
-
-// import java.util.Scanner;
-
-public class Empolyee {
+public class Student {
     private int eid;
     private String ename;
     private int eage;
     private String esex;
     private String eaddress;
+    private IOmethod io = new IOmethod();
 
-    public Empolyee() {
-        System.out.print("请输入数字：");
-        int id = inputInt();
+    public Student() {
+        System.out.print("请输入学号：");
+        int id = io.inputInt();
         setId(id);
         System.out.print("请输入姓名：");
-        String name = inputString();
+        String name = io.inputString();
         setName(name);
         System.out.print("请输入年龄：");
-        int age = inputInt();
+        int age = io.inputInt();
         setAge(age);
         System.out.print("请输入性别（男/女）：");
-        String sex = inputString();
+        String sex = io.inputString();
         setSex(sex);
+
         System.out.print("请输入籍贯（写省市即可）：");
-        String add = inputString();
+        String add = io.inputString();
         setAdd(add);
-        System.out.println("员工信息为：" + this);
-    }
-
-    int inputInt() {
-        Scanner i = new Scanner(System.in);
-        int tmp = i.nextInt();
-        return tmp;
-    }
-
-    String inputString() {
-        Scanner s = new Scanner(System.in);
-        String tmp = s.nextLine();
-        return tmp;
+        System.out.println("学生信息为：" + this);
     }
 
     public void setId(int id) {
@@ -96,10 +73,5 @@ public class Empolyee {
 
         return eid + " " + ename + " " + eage + " " + esex + " " + eaddress;
     }
-
-    // public static void main(String[] args) {
-    // Empolyee emp1 = new Empolyee();
-    // System.out.println(emp1);
-    // }
 
 }
