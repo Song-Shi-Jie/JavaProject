@@ -50,10 +50,9 @@ public class Empolyee {
         return eid + " " + ename + " " + eage + " " + esex + " " + eaddress;
     }
 
-    public static void main(String[] args) {
-        Empolyee emp1 = new Empolyee();
-        emp1.setId(1);
-        System.out.println(emp1);
-    }
+    // public static void main(String[] args) {
+    // Empolyee emp1 = new Empolyee();
+    // System.out.println(emp1);
+    // }
 
 }
