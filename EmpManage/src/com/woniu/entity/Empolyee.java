@@ -1,4 +1,5 @@
-package src.entity;
+package com.woniu.entity;
+
 /*
  * @Author: 宋世杰
  * @Date: 2023-03-22 11:15:48
