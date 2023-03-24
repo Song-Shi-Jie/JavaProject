@@ -1,7 +1,7 @@
 /*
  * @Author: 宋世杰
  * @Date: 2023-03-22 16:27:49
- * @LastEditTime: 2023-03-22 17:56:02
+ * @LastEditTime: 2023-03-23 09:16:40
  * @LastEditors: 宋世杰
  * @FilePath: \EmpManage\src\student\StudentManager.java
  * @Description: 请自行修改描述
@@ -12,6 +12,9 @@ import java.util.Arrays;
 
 public class StudentManager {
     private Student[] e = new Student[0];
+    // private Student[] e = { "1 张三 19 男 陕西", "2 李四 32 女 四川", "3 张国立 24 男 陕西", "4
+    // 张默 56 男 四川", "5 王五 15 男 四川",
+    // "6 陈六 29 男 四川" };
     private IOmethod io = new IOmethod();
 
     public void getEmpNum() {
@@ -56,29 +59,29 @@ public class StudentManager {
     }
 
     public void changeAge(int i, int age) {
-        System.out.println("学生原年龄为" + e[i].getName());
+        System.out.println("学生原年龄为" + e[i].getAge());
         e[i].setAge(age);
         ;
-        System.out.println("学生修改后年龄为" + e[i].getName());
+        System.out.println("学生修改后年龄为" + e[i].getAge());
     }
 
     public void changeSex(int i, String sex) {
-        System.out.println("学生原性别为" + e[i].getName());
+        System.out.println("学生原性别为" + e[i].getSex());
         e[i].setSex(sex);
         ;
-        System.out.println("学生修改后性别为" + e[i].getName());
+        System.out.println("学生修改后性别为" + e[i].getSex());
     }
 
     public void changeAdd(int i, String add) {
-        System.out.println("学生原籍贯为" + e[i].getName());
+        System.out.println("学生原籍贯为" + e[i].getAdd());
         e[i].setAdd(add);
-        System.out.println("学生修改后籍贯为" + e[i].getName());
+        System.out.println("学生修改后籍贯为" + e[i].getAdd());
     }
 
     public String searchIndex(int i) {
         String lind = "";
         for (int j = 0; j < e.length; j++) {
-            if (e[i].getId() == i) {
+            if (e[j].getId() == i) {
                 lind += j;
                 break;
             }
@@ -89,7 +92,7 @@ public class StudentManager {
     public String searchName(String name) {
         String lind = "";
         for (int i = 0; i < e.length; i++) {
-            if (e[i].getName() == name) {
+            if (e[i].getName().equals(name)) {
                 lind += i;
             }
         }
@@ -109,7 +112,7 @@ public class StudentManager {
     public String searchSex(String sex) {
         String lind = "";
         for (int i = 0; i < e.length; i++) {
-            if (e[i].getSex() == sex) {
+            if (e[i].getSex().equals(sex)) {
                 lind += i;
             }
         }
@@ -119,7 +122,7 @@ public class StudentManager {
     public String searchAdd(String add) {
         String lind = "";
         for (int i = 0; i < e.length; i++) {
-            if (e[i].getAdd() == add) {
+            if (e[i].getAdd().equals(add)) {
                 lind += i;
             }
         }
@@ -150,5 +153,135 @@ public class StudentManager {
             final_index = searchAdd(ind);
         }
         return final_index;
+    }
+
+    public void change() {
+        System.out.println("请输入你要更改的信息：");
+        System.out.println("1、姓名；2、年龄；3、性别；4、籍贯；");
+        int choose = io.inputInt();
+        if (choose == 1) {
+            System.out.println("请选择你要查找的依据：");
+            System.out.println("1、编号；2、姓名；3、年龄；4、性别；5、籍贯");
+            int tmp = io.inputInt();
+            String index = "";
+            switch (tmp) {
+                case 1:
+                    index = search(tmp);
+                    break;
+                case 2:
+                    index = search(tmp);
+                    break;
+                case 3:
+                    index = search(tmp);
+                    break;
+                case 4:
+                    index = search(tmp);
+                    break;
+                case 5:
+                    index = search(tmp);
+                    break;
+            }
+            System.out.println("请输入要修改的姓名：");
+            String tname = io.inputString();
+            for (int i = 0; i < index.length(); i++) {
+                char ind = index.charAt(i);
+                int p = Character.getNumericValue(ind);
+                changeName(p, tname);
+            }
+        } else if (choose == 2) {
+            System.out.println("请选择你要查找的依据：");
+            System.out.println("1、编号；2、姓名；3、年龄；4、性别；5、籍贯");
+            int tmp = io.inputInt();
+            String index = "";
+            switch (tmp) {
+                case 1:
+                    index = search(tmp);
+                    break;
+                case 2:
+                    index = search(tmp);
+                    break;
+                case 3:
+                    index = search(tmp);
+                    break;
+                case 4:
+                    index = search(tmp);
+                    break;
+                case 5:
+                    index = search(tmp);
+                    break;
+            }
+            System.out.println("请输入要修改的年龄：");
+            int tage = io.inputInt();
+            for (int i = 0; i < index.length(); i++) {
+                char ind = index.charAt(i);
+                int p = Character.getNumericValue(ind);
+                changeAge(p, tage);
+            }
+        } else if (choose == 3) {
+            System.out.println("请选择你要查找的依据：");
+            System.out.println("1、编号；2、姓名；3、年龄；4、性别；5、籍贯");
+            int tmp = io.inputInt();
+            String index = "";
+            switch (tmp) {
+                case 1:
+                    index = search(tmp);
+                    break;
+                case 2:
+                    index = search(tmp);
+                    break;
+                case 3:
+                    index = search(tmp);
+                    break;
+                case 4:
+                    index = search(tmp);
+                    break;
+                case 5:
+                    index = search(tmp);
+                    break;
+            }
+            System.out.println("请输入要修改的性别：");
+            String tsex = io.inputString();
+            for (int i = 0; i < index.length(); i++) {
+                char ind = index.charAt(i);
+                int p = Character.getNumericValue(ind);
+                changeSex(p, tsex);
+            }
+        } else if (choose == 4) {
+            System.out.println("请选择你要查找的依据：");
+            System.out.println("1、编号；2、姓名；3、年龄；4、性别；5、籍贯");
+            int tmp = io.inputInt();
+            String index = "";
+            switch (tmp) {
+                case 1:
+                    index = search(tmp);
+                    break;
+                case 2:
+                    index = search(tmp);
+                    break;
+                case 3:
+                    index = search(tmp);
+                    break;
+                case 4:
+                    index = search(tmp);
+                    break;
+                case 5:
+                    index = search(tmp);
+                    break;
+            }
+            System.out.println("请输入要修改的籍贯：");
+            String tadd = io.inputString();
+            for (int i = 0; i < index.length(); i++) {
+                char ind = index.charAt(i);
+                int p = Character.getNumericValue(ind);
+                changeAdd(p, tadd);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        StudentManager sm = new StudentManager();
+        sm.add();
+        String index = sm.searchSex("1");
+        System.out.println(index);
     }
 }
