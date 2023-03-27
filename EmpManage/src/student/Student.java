@@ -1,3 +1,11 @@
+/*
+ * @Author: 宋世杰
+ * @Date: 2023-03-22 16:24:04
+ * @LastEditTime: 2023-03-24 17:45:10
+ * @LastEditors: 宋世杰
+ * @FilePath: \EmpManage\src\student\Student.java
+ * @Description: 请自行修改描述
+ */
 package student;
 
 public class Student {
@@ -6,24 +14,23 @@ public class Student {
     private int eage;
     private String esex;
     private String eaddress;
-    private IOmethod io = new IOmethod();
 
     public Student() {
         System.out.print("请输入学号：");
-        int id = io.inputInt();
+        int id = IOmethod.inputInt();
         setId(id);
         System.out.print("请输入姓名：");
-        String name = io.inputString();
+        String name = IOmethod.inputString();
         setName(name);
         System.out.print("请输入年龄：");
-        int age = io.inputInt();
+        int age = IOmethod.inputInt();
         setAge(age);
         System.out.print("请输入性别（男/女）：");
-        String sex = io.inputString();
+        String sex = IOmethod.inputString();
         setSex(sex);
 
         System.out.print("请输入籍贯（写省市即可）：");
-        String add = io.inputString();
+        String add = IOmethod.inputString();
         setAdd(add);
         System.out.println("学生信息为：" + this);
     }
