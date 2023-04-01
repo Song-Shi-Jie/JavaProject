@@ -1,4 +1,4 @@
-package Algorithm.Basic;
+package Basic;
 
 public class BubbleSort {
     public static void bubbleSort(int[] arr) {

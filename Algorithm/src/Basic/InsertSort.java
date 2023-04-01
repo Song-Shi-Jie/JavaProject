@@ -6,7 +6,7 @@
  * @FilePath: \VSc-Java\Algorithm\Basic\InsertSort.java
  * @Description: 请自行修改描述
  */
-package Algorithm.Basic;
+package Basic;
 
 public class InsertSort {
     public static void insertSort(int[] arr) {

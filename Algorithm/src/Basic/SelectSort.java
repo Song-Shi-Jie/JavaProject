@@ -1,4 +1,4 @@
-package Algorithm.Basic;
+package Basic;
 
 public class SelectSort {
     public static void selectSort(int[] arr) {
@@ -8,7 +8,7 @@ public class SelectSort {
         // int minIndex = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                if(arr[i] > arr[j]){
+                if (arr[i] > arr[j]) {
                     swap(arr, i, j);
                 }
             }

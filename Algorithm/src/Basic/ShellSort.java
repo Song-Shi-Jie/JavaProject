@@ -6,7 +6,7 @@
  * @FilePath: \VSc-Java\Algorithm\Basic\ShellSort.java
  * @Description: 请自行修改描述
  */
-package Algorithm.Basic;
+package Basic;
 
 public class ShellSort {
     public static void shellSort(int[] arr) {

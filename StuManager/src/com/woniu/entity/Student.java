@@ -1,7 +1,7 @@
 /*
  * @Author: 宋世杰
  * @Date: 2023-03-28 17:37:48
- * @LastEditTime: 2023-03-28 18:57:33
+ * @LastEditTime: 2023-03-30 20:23:35
  * @LastEditors: 宋世杰
  * @FilePath: \StuManager\src\com\woniu\entity\Student.java
  * @Description: 请自行修改描述
@@ -10,7 +10,7 @@ package com.woniu.entity;
 
 import com.woniu.tools.ScannerTools;
 
-public class Student {
+public class Student implements Comparable {
     private final int EID;
     private String sname;
     private int sage;
@@ -75,6 +75,16 @@ public class Student {
     public String toString() {
         return "Student [EID=" + EID + ", sname=" + sname + ", sage=" + sage + ", ssex=" + ssex + ", sadd=" + sadd
                 + "]";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Student e1 = (Student) o;
+        if (this.getEID() > e1.getEID()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
 }
