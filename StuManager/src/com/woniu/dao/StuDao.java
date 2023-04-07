@@ -1,7 +1,7 @@
 /*
  * @Author: 宋世杰
  * @Date: 2023-03-28 17:44:54
- * @LastEditTime: 2023-03-29 19:08:58
+ * @LastEditTime: 2023-04-06 00:43:26
  * @LastEditors: 宋世杰
  * @FilePath: \StuManager\src\com\woniu\dao\StuDao.java
  * @Description: 请自行修改描述
@@ -9,6 +9,8 @@
 package com.woniu.dao;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import com.woniu.entity.Student;
 
@@ -37,8 +39,18 @@ public interface StuDao {
     // 修改学生信息
     void updateStu();
 
+    // 显示男女数目
+    public Map<String, Integer> countSex(List<Student> stu);
+
+    // 显示所有男生
+    public List<Student> selectAllMan(List<Student> stu);
+
     // 删除
-    void del(ArrayList<Student> list);
+    boolean delById(List<Student> list);
+
+    public void writeFile(List<Student> list) throws Exception;
+
+    public List<Student> readFile() throws Exception;
 
     // 总删除方法
     void search(ArrayList<Student> list);
